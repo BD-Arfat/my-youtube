@@ -83,7 +83,7 @@ const Headers = () => {
                         <FiBell className='text-white text-xl cursor-pointer'/>
                     </div>
                     <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-                        <img src="https://xsgames.co/randomusers/assets/avatars/male/8.jpg" alt="your-profile" />
+                        <img src="https://food-food-5906b.firebaseapp.com/static/media/arfat.ebf5894ba3a529650181.jpg" alt="your-profile" />
                     </div>
                 </div>
             </div>

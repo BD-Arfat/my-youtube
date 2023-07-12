@@ -1,9 +1,10 @@
 import React from 'react';
+import LeftNave from './LeftNave';
 
 const Feed = () => {
     return (
-        <div>
-            
+        <div className='flex flex-row h-[calc(100%-56px)]'>
+            <LeftNave/>
         </div>
     );
 };
