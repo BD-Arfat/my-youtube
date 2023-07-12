@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { fetchDataFromApi } from "../utils/Api";
 
-const Context = createContext();
+export const Context = createContext();
 
 export const AppContext = (props) =>{
     const [loding, setLoding] = useState(false);
@@ -15,9 +15,9 @@ export const AppContext = (props) =>{
 
     const fetchSelectedCategoryData = (query) =>{
         setLoding(true);
-        fetchDataFromApi(`search/?q=${query}`).then((res)=>{
-            console.log(res);
-            // setSearchResults(res);
+        fetchDataFromApi(`search/?q=${query}`).then(({contents})=>{
+            console.log(contents);
+            setSearchResults(contents);
             setLoding(false)
         })
     }
