@@ -15,7 +15,7 @@ import { CgClose } from "react-icons/cg";
 const Headers = () => {
 
     const [searchQuery, setSearchQuery] = useState('');
-    const { loding, mobileMenu, setMobileManu } = useContext(Context);
+    const { loding, mobileManu, setMobileManu } = useContext(Context);
 
     const navigate = useNavigate();
     const searchQueryHandler = (event) => {
@@ -24,8 +24,8 @@ const Headers = () => {
         }
     };
 
-    const mobileMenuToggle = () => {
-        setMobileManu(!mobileMenu)
+    const mobileManuToggle = () => {
+        setMobileManu(!mobileManu)
     };
 
     const { pathname } = useLocation();
@@ -37,8 +37,8 @@ const Headers = () => {
 
             <div className='flex h-5 items-center'>
                 {pageName !== 'video' && (
-                    <div onClick={mobileMenuToggle} className='flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]'>
-                        {mobileMenu ? (<CgClose className='text-white text-xl' />) : (<SlMenu className='text-white text-xl' />)
+                    <div onClick={mobileManuToggle} className='flex md:hidden md:mr-6 cursor-pointer items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]'>
+                        {mobileManu ? (<CgClose className='text-white text-xl' />) : (<SlMenu className='text-white text-xl' />)
 
                         }
                     </div>
@@ -77,17 +77,16 @@ const Headers = () => {
             <div className='flex items-center'>
                 <div className="hidden md:flex">
                     <div className='flex items-center justify-center h-10 w-10 rounded-full hover:bf-[#303030]/[0.6]'>
-                        <RiVideoAddLine className='text-white text-xl cursor-pointer'/>
+                        <RiVideoAddLine className='text-white text-xl cursor-pointer' />
                     </div>
                     <div className='flex items-center justify-center ml-2 h-10 w-10 rounded-full hover:bf-[#303030]/[0.6]'>
-                        <FiBell className='text-white text-xl cursor-pointer'/>
-                    </div>
-                    <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-                        <img src="https://food-food-5906b.firebaseapp.com/static/media/arfat.ebf5894ba3a529650181.jpg" alt="your-profile" />
+                        <FiBell className='text-white text-xl cursor-pointer' />
                     </div>
                 </div>
+                <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
+                    <img src="https://food-food-5906b.firebaseapp.com/static/media/arfat.ebf5894ba3a529650181.jpg" alt="your-profile" />
+                </div>
             </div>
-
         </div>
     );
 };

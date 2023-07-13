@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 const LeftNave = () => {
 
 
-    const { selectCategories, setSelectCategories, mobileMenu } =
+    const { selectCategories, setSelectCategories, mobileManu, setMobileManu } =
         useContext(Context);
 
     const navigate = useNavigate();
@@ -28,8 +28,7 @@ const LeftNave = () => {
 
     return (
         <div
-            className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${mobileMenu ? "translate-x-0" : ""
-                }`}
+        className={`md:block w-[240px] overflow-y-auto h-full py-4 bg-black absolute md:relative z-10 translate-x-[-240px] md:translate-x-0 transition-all ${mobileManu ? 'translate-x-1' : ''}`}
         >
             <div className="flex px-5 flex-col">
                 {categories.map((item) => {
@@ -43,8 +42,8 @@ const LeftNave = () => {
                                     navigate("/");
                                 }}
                                 className={`${selectCategories === item.name
-                                        ? "bg-white/[0.15]"
-                                        : ""
+                                    ? "bg-white/[0.15]"
+                                    : ""
                                     }`}
                             />
                             {item.divider && (
